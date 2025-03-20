@@ -1,0 +1,23 @@
+
+h1, h2 {
+  font-family: Arial;
+  color: grey;
+}
+
+
+h1 {
+  border-bottom：1px solid black;
+  font-size: 5rem;
+}
+
+p {
+  color: maroon;
+  font-size: 1.3rem
+}
+body {
+  font-family: Arial;
+  font-size:  1.5em;
+}
+em {
+  font-family: "Cascadia Mono";
+}
