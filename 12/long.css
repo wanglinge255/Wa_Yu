@@ -12,7 +12,7 @@ h1 {
 
 p {
   color: maroon;
-  font-size: 1.3rem
+  font-size: 1.3rem;
 }
 body {
   font-family: Arial;
@@ -20,4 +20,15 @@ body {
 }
 em {
   font-family: "Cascadia Mono";
+}
+body{
+	color: gainsboro;
+	color: rgb(65, 105, 225);
+	color: #ef632b;
+	color: rgba(39,177,182,0.8);
+	color: #2775b6CC;
+}
+a
+{
+  text-decoration: none;
 }
