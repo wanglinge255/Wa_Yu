@@ -6,12 +6,26 @@
     <link type="text/css" rel="stylesheet" href="lounge.css">
   </head>
   <body>
+    <style>
+      
+      .green-font {
+        color: green;
+      }
+      
+      .red-font {
+        color: red;
+      }
+      
+      .blue-font {
+        color: blue;
+      }
+    </style>
    <div>
     <p><img src="images/logo.gif" alt="Head First Lounge"></p>
     <h1>Welcome to the Head First Lounge</h1>
    </div>
 
-   <div>
+   <div class='green-font blue-font red-font'>
     <p>
       The Head First Lounge is, no doubt, the biggest trendsetter in Webville. 
       Stop in to sample the eclectic offering of elixirs, teas, and coffees,
@@ -139,5 +153,8 @@
       the property of their respective owners.
     </p>
    </div>
+   <p class="text" style="color: #b36f43;" > CSS 的内联引用 </p>
+   <p style="color: #d47f58; font-family:'微软雅黑', '黑体'; "> CSS 的内联引用 </p>
+   <div style="background-color: #0000ff; color: white; padding: 20px;">一段有背景色和边距的文字</div>
   </body>
 </html>
