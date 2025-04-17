@@ -25,15 +25,10 @@ body {
   font-size:        105%;
   padding:          15px;
   margin:           0px 10px 10px 10px;
-  
+  width: 200px;
   
 }
-.allcontent {
 
-
-  background-color: #675c47;
-
-}
 
 .footer {
   background-color: #675c47;
@@ -55,6 +50,15 @@ h1 {
 .beanheading {
   text-align:       center;
   line-height:      1.8em;
+}
+
+.allcontent {
+  width: 1200px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #675c47;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 a:link {
@@ -91,7 +95,28 @@ a:visited {
   vertical-align: top;
 }
 
-.logo-2{
-  float: right;
+.sprite-container{
+  width:260px;
+  height: 100%;
+  overflow: hidden;
+}
+.header-logo{
+  background-image:url('images/header.gif');
+  background-position-x: 0px;
+  background-position-y: 0px;
+}
+.header-slogan{
+  background-image: url('images/header.gif');
+  background-position: -540px 0px;
+}
+.header-slogan {
+	background-image: url('images/header.gif');
+	background-position: -260px 0px;
+	float: right;
 }
 
+.header-slogan {
+	background-image: url('images/header.gif');
+	background-position: 260px 0px; 
+	float: right;
+}
