@@ -1,0 +1,85 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: white;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.sidebar {
+  width: 20%;
+  background-color: #333;
+  padding: 10px;
+}
+
+.game-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.game-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.game-item img {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+}
+
+.main-content {
+  width: 75%;
+  background-color: #444;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.screenshot {
+  width: 100%;
+  height: auto;
+}
+
+.video-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.play-button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.watch-trailer {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.learn-more {
+  background-color: green;
+  color: white;
+  padding: 5px 15px;
+  text-decoration: none;
+  border-radius: 3px;
+}
