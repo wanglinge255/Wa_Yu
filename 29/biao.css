@@ -1,0 +1,58 @@
+/* 通用样式 */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: white;
+}
+.minecraft-news-form {
+  background-color: #222;
+  border: 2px solid #333;
+  padding: 20px;
+  width: 700px;
+  margin: 0 auto;
+  font-family: Arial,sans-serif;
+}
+h1 {
+  text-align: center;
+  font-size: 2.5em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.form-group {
+  margin-bottom: 15px;
+  display: inline-block;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.form-group input,
+.form-group select {
+  width: 40%;
+  padding: 10px;
+  border: 1px solid #555;
+  background-color: #333;
+  color: white;
+
+}
+.required-note {
+  text-align: right;
+  font-size: 0.9em;
+}
+.privacy-link {
+  color: lightgreen;
+}
+button {
+  background-color: #ddd;
+  color: #333;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  float: right;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #ccc;
+}

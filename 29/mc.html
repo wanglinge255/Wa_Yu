@@ -20,11 +20,66 @@
         <video class="mc"  width="600"  controls loop>
           <source src="he/mcmv.webm" type="video/webm">
         </video>
+        <button class="custom-play-button" data-tooltip="play video">▶</button>
+        <div class="tooltip"></div>
         <div class="word">
           <p>Explore your own unique worlds, survive the night, and create anything you can imagine!</p>
           <p>Watch the sample video of Minecraft gameplay above, or select "watch the trailer" to see the full video on YouTube.</p>
         </div>
+        <div class="more">
+          <a class="learn" href="https://example.com" target="_blank">LEARN MORE</a>
+        </div>
       </div>
     </div>
+    
+    <script>
+      // 合并重复的 DOM 查询，将 video 和 playButton 提取为全局变量
+      const video = document.querySelector('.mc');
+      const playButton = document.querySelector('.custom-play-button');
+      const tooltip = document.querySelector('.tooltip');
+      let timeoutId; // 用于存储定时器 ID
+    
+      // 处理播放/暂停按钮点击事件
+      playButton.addEventListener('click', function() {
+        if (video.paused) {
+          video.play();
+          playButton.textContent = '⏸';
+        } else {
+          video.pause();
+          playButton.textContent = '▶';
+        }
+      });
+    
+      // 处理视频播放结束事件
+      video.addEventListener('ended', function() {
+        playButton.textContent = '▶';
+      });
+    
+      // 处理鼠标移动到播放按钮上的事件
+      playButton.addEventListener('mousemove', function (e) {
+        // 清除之前的定时器，避免多次触发
+        if (timeoutId) {
+          clearTimeout(timeoutId);
+        }
+        // 设置新的定时器，延迟 1 秒显示提示框
+        timeoutId = setTimeout(() => {
+          const tooltipText = this.dataset.tooltip;
+          tooltip.textContent = tooltipText;
+          tooltip.style.opacity = 1;
+          // 设置提示框在鼠标右下角
+          tooltip.style.left = e.pageX + 10 + 'px';
+          tooltip.style.top = e.pageY + 10 + 'px';
+        }, 500);
+      });
+    
+      // 处理鼠标离开播放按钮的事件
+      playButton.addEventListener('mouseleave', function () {
+        // 清除定时器
+        if (timeoutId) {
+          clearTimeout(timeoutId);
+        }
+        tooltip.style.opacity = 0;
+      });
+    </script>
   </body>
 </html>

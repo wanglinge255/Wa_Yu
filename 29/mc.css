@@ -1,9 +1,11 @@
+/*图片*/
 .game-item img {
   width: 46px;
   height: 46px;
   margin-right: 10px;
   vertical-align: middle;
 }
+/*列表*/
 .game-item{
   list-style-type: none;
   color: #d0c5c0;
@@ -12,6 +14,7 @@
   padding-right: 50px;
   background-color: #262423;
 }
+/*选中图片*/
 .game-item-1 img {
   width: 46px;
   height: 46px;
@@ -20,6 +23,7 @@
   box-shadow: 0 0 0 2px #262423,
               0 0 0 4px white;
 }
+/*选中列表*/
 .game-item-1{
   list-style-type: none;
   color: #d0c5c0;
@@ -28,27 +32,136 @@
   padding-right: 50px;
   background-color: #3d3938;
 }
+/*背景颜色*/
 body {
   background-color: #171615;
 }
+/*标题*/
 h1 {
   color: #ffffff;
   text-align: center;
 }
+/*文字*/
 .word{
   color: #ffffff;
+  display: table-cell;
 }
+.video{
+  display: table;
+  margin: 0 auto;
+}
+.more{
+  display: table-cell;
+  vertical-align: top;
+  
+}
+
+/*超链接*/
+.learn {
+  background-color: #3c8527; /* 设置超链接背景色为红色 */
+  text-decoration: none; /* 去掉下划线 */
+  color: white; /* 设置文字颜色 */
+  white-space: nowrap;
+  display: inline-block; /* 使超链接成为内联块元素 */
+  padding: 10px 20px; /* 设置内边距 */
+  transition: background-color 0.3s; /* 添加过渡效果 */
+  border: 2px solid #171615;
+}
+/* 鼠标悬停时改变背景色 */
+.learn:hover {
+  background-color: #367723; /* 鼠标悬停时背景色变为深红色 */
+}
+/* 仅针对 .tooltip 类内的超链接设置样式 */
+.tooltip .learn {
+  background-color: #00ff00; /* 设置 .tooltip 内超链接背景色为绿色 */
+}
+.tooltip .learn:hover {
+  background-color: #00cc00; /* 鼠标悬停时 .tooltip 内超链接背景色变为深绿色 */
+}
+
 .tableContainer{
   display: table;
   margin: 0 auto;
+
+  width: 800px;
+  height: 600px;
+  overflow: auto;
+  box-sizing: border-box;
 }
 .work{
   float: right;
   display: table-cell;
   vertical-align: top;
   background-color: #3d3938;
+  padding: 32px 32px 32px 36px;
 }
+/*列表文字*/
 .gameword{
   display:table-cell;
   vertical-align: top;
+}
+
+
+
+
+
+
+/*隐藏视频的控件*/
+.mc::-webkit-media-controls {
+  display: none !important;
+}
+.mc::-moz-media-controls {
+  display: none !important;
+}
+.mc::-ms-media-controls {
+  display: none !important;
+}
+.mc {
+  controls: none;
+}
+
+/*视频*/
+.video-container {
+  position: relative;
+  width: fit-content;
+}
+.custom-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+
+
+.custom-play-button:hover {
+  opacity: 1;
+}
+
+.video-container, .custom-play-button {
+  margin: 0;
+  padding: 0;
+}
+.tooltip {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 9999;
 }
