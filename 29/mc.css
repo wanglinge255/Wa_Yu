@@ -1,12 +1,18 @@
 body{
   font-family: Arial, sans-serif;
 }
-
+/* 原有的 game-list 选择器，这里明确设置上下 margin 为 0 */
+.game-list {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
 /*图片*/
 .game-item img {
-  width: 50px;
-  height: 50px;
-  margin-right: 15px;
+  width: 47px;
+  height: 47px;
+  margin-right: 20px;
   vertical-align: middle;
 }
 /*列表*/
@@ -14,34 +20,39 @@ body{
   list-style-type: none;
   color: #d0c5c0;
   white-space: nowrap;
-  padding: 24px;
-  padding-right: 50px;
+  padding: 24px 185px 24px 24px; /* 增加右侧内边距，原 50px 改为 80px */
   background-color: #262423;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #555; /* 添加底部边框 */
+  border-top: 1px solid #555; /* 添加顶端白边 */
+  border-bottom: 2px solid black; /* 添加底端黑边 */
+  font-size: 25px;
 }
-/*选中图片*/
-.game-item-1 img {
-  width: 50px;
-  height: 50px;
-  margin-right: 15px;
-  vertical-align: middle;
-  box-shadow: 0 0 0 2px #262423,
-              0 0 0 4px white;
-}
+
 /*选中列表*/
 .game-item-1{
   list-style-type: none;
   color: #d0c5c0;
   white-space: nowrap;
-  padding: 24px;
-  padding-right: 50px;
+  padding: 24px 185px 24px 24px; /* 增加右侧内边距，原 50px 改为 80px */
   background-color: #3d3938;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #555; /* 添加底部边框 */
+  border-top: 4px solid #555; 
+  border-bottom: 4px solid black; /* 确保底端黑边样式 */
+  font-size: 25px;
 }
+
+/*选中图片*/
+.game-item-1 img {
+  width: 47px;
+  height: 47px;
+  margin-right: 17px;
+  vertical-align: middle;
+  box-shadow: 0 0 0 2px #262423,
+              0 0 0 4px white;
+}
+
 /*背景颜色*/
 body {
   background-color: #171615;
@@ -50,6 +61,9 @@ body {
 h1 {
   color: #ffffff;
   text-align: center;
+  margin-top: 45px; /* 增加标题上方的空白，可按需调整 */
+  margin-bottom: 45px; /* 增加标题下方的空白，可按需调整 */
+  font-size: 40px; /* 新增字体大小属性，可按需调整 */
 }
 /*文字*/
 .word{
@@ -73,9 +87,12 @@ h1 {
   color: white; /* 设置文字颜色 */
   white-space: nowrap;
   display: inline-block; /* 使超链接成为内联块元素 */
-  padding: 10px 20px; /* 设置内边距 */
+  padding: 15px 22px; /* 增大内边距，原 10px 20px */
   transition: background-color 0.3s; /* 添加过渡效果 */
   border: 2px solid #171615;
+  font-size: 18px; /* 新增字体大小属性，可按需调整 */
+  /* 添加字体加粗属性 */
+  font-weight: bold; 
 }
 /* 鼠标悬停时改变背景色 */
 .learn:hover {
@@ -105,22 +122,20 @@ h1 {
 
 
 .work{
-  float: right;
+  /*float: right;*/
   display: table-cell;
   vertical-align: top;
   background-color: #3d3938;
   padding: 30px 30px 30px 33px;
-
-
-
+  border-top: 4px solid #555 ; /* 添加顶端白边 */
+  border-right: 4px solid #555; /* 添加右侧黑边 */;
+  border-bottom: 4px solid #2a2626;
+  border-left: 4px solid #2a2626; /* 添加左侧黑边 */;
 }
 /*列表文字*/
 .gameword{
   display:table-cell;
   vertical-align: top;
-
-
-
 }
 
 
@@ -143,28 +158,31 @@ h1 {
 }
 
 /*视频*/
+/* 视频容器 */
 .video-container {
   position: relative;
   width: fit-content;
 }
+
+/* 自定义播放按钮 */
 .custom-play-button {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.7);
+  /* 修改为左下角位置 */
+  top: auto; 
+  left: 630px; /* 距离视频左侧 20px，可按需调整 */
+  bottom: 20px; /* 距离视频底部 20px，可按需调整 */
+  transform: none; /* 移除原有的居中变换 */
+  background-color: transparent; /* 设置背景为透明 */
   color: white;
-  border: none;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  border: 2px solid white; /* 设置白色边框 */
+  /* 移除 border-radius 属性以去掉圆角 */
+  width: 42px;
+  height: 41px;
   font-size: 24px;
   cursor: pointer;
   opacity: 0.8;
   transition: opacity 0.3s;
 }
-
-
 
 .custom-play-button:hover {
   opacity: 1;
@@ -186,4 +204,38 @@ h1 {
   pointer-events: none;
   transition: opacity 0.3s;
   z-index: 9999;
+}
+
+/* 新容器样式 */
+.word-learn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px; /* 可根据需求调整 */
+}
+
+/* word 样式 */
+.word {
+  color: #ffffff;
+  flex: 1; /* 让 word 占据剩余空间 */
+}
+
+/* 让 p 标签上下排列 */
+.word p {
+  margin: 0;
+  margin-bottom: 10px; /* 可根据需求调整段落间距 */
+  white-space: normal; /* 允许文本换行 */
+  word-wrap: break-word; /* 长单词或 URL 地址换行 */
+  max-width: 650px; /* 可根据需求调整最大宽度 */
+}
+
+/* more 样式 */
+.more {
+  white-space: nowrap; /* 防止链接换行 */
+}
+
+/* 若要对箭头单独设置样式，可以使用伪元素 */
+.learn::after {
+  content: '➤';
+  margin-left: 16px; /* 可以调整箭头和文字的间距 */
 }

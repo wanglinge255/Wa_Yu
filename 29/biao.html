@@ -13,20 +13,27 @@
         <h1>GET THE LATEST MINECRAFT NEWS!</h1>
         <p>Enter your email address, select your country or region, and submit. Opt out at any time. We promise not to spam you.</p>
         <div class="form-group">
-            <label for="email">Email Address *</label>
-            <input type="email" id="email" required placeholder="Enter your email">
+            <label for="email">Email Address <span class="hidden-star">*</span></label>
+            <input type="email" id="email" required>
         </div>
-        <div class="form-group">
-            <label for="country">Country/Region *</label>
+        <div class="form-group-1">
+            <label for="country">Country/Region <span class="hidden-star">*</span></label>
             <select id="country" required>
                 <option value="">Choose One</option>
                 <!-- 可在此添加具体国家/地区选项 -->
             </select>
         </div>
-        <p class="required-note">* Required Fields</p>
-        <p>By opting in, you agree to receive communications from Minecraft. You can always unsubscribe.</p>
-        <p>I will receive information, tips, and offers about Minecraft. <a href="#" class="privacy-link">Privacy Statement</a>.</p>
-        <button type="submit">SUBMIT</button>
+        <p class="required-note"><span class="red-star">*</span> Required Fields</p>
+        <!-- 添加横线 -->
+        <hr>
+        <div class="form-footer">
+            <div class="p-container">
+                <p>By opting in, you agree to receive communications from Minecraft. You can always unsubscribe.</p>
+                <p>I will receive information, tips, and offers about Minecraft. <a href="#" class="privacy-link">Privacy Statement</a>.</p>
+            </div>
+            <!-- 修改 button 标签内容 -->
+            <button type="submit">SUBMIT ➤</button>
+        </div>
     </form>
 </body>
 

@@ -8,16 +8,74 @@ body {
   background-color: #222;
   border: 2px solid #333;
   padding: 30px;
-  width: 800px;
+  width: 850px;
   margin: 0 auto;
   font-family: Arial,sans-serif;
+  /* 新增 flex 布局 */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.form-group-1,
+.form-group {
+  /* 移除旧的浮动和显示属性 */
+  /* margin-bottom: 15px; 已经通过 flex 的 gap 处理 */
+  /* display: inline-block; */
+  /* float: right; */
+  /* clear: both; */
+  flex: 1;
+  min-width: 0; /* 确保在小空间下也能正常收缩 */
+}
+
+.form-group-1 label,
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group-1 input,
+.form-group-1 select,
+.form-group input,
+.form-group select {
+  /* 统一输入框宽度 */
+  width: 90%; 
+  padding: 10px;
+  border: 1px solid #555;
+  background-color: #333;
+  color: white;
 }
 h1 {
   text-align: center;
   font-size: 2.5em;
   text-transform: uppercase;
   letter-spacing: 2px;
+  /* 减少上下外边距 */
+  margin-top: -8px; 
+  margin-bottom: -17px; 
 }
+.form-group-1 {
+  margin-bottom: 15px;
+  display: inline-block;
+  float: right; /* 让表单组右移 */
+  clear: both; /* 清除浮动影响 */
+}
+.form-group-1 label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.form-group-1 input,
+.form-group-1 select {
+  /* 修改宽度，从 40% 变为 60% */
+
+  padding: 10px;
+  border: 1px solid #555;
+  background-color: #333;
+  color: white;
+}
+
 .form-group {
   margin-bottom: 15px;
   display: inline-block;
@@ -29,30 +87,91 @@ h1 {
 }
 .form-group input,
 .form-group select {
-  width: 40%;
+  /* 修改宽度，从 40% 变为 60% */
   padding: 10px;
   border: 1px solid #555;
   background-color: #333;
   color: white;
-
 }
+
+
 .required-note {
   text-align: right;
   font-size: 0.9em;
+  clear: both; 
+  display: block; 
+  /* 减少顶部外边距，让提示信息紧贴输入框 */
+  margin-top: -14px; 
+  float: none; 
+  width: 100%; 
 }
 .privacy-link {
   color: lightgreen;
 }
-button {
-  background-color: #ddd;
-  color: #333;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  float: right;
-  font-size: 1em;
-  transition: background-color 0.3s ease;
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
+
+.p-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 70%; /* 可根据实际情况调整 */
+}
+
+.p-container p {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    float: none; 
+    padding: 15px 30px; 
+    font-size: 1.2em; 
+    font-family: Arial, sans-serif, "Segoe UI Symbol"; 
+    /* 添加颜色属性，将文字颜色设置为灰色 */
+    color: #808080; 
+}
+
+button::after {
+    content: "";
+    margin-left: 8px; 
+}
+
 button:hover {
   background-color: #ccc;
+}
+
+
+/* 为横线添加样式 */
+hr {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #555; /* 设置横线的颜色和粗细 */
+  /* 减少顶部外边距，例如将其设为 10px */
+  margin-top: -5px; 
+  margin-bottom: 20px;
+}
+
+
+/* 隐藏原有的 * 号 */
+.hidden-star {
+    display: none;
+}
+
+/* 为必填 label 添加红色 * 号，并增大大小 */
+label[for="email"]::after,
+label[for="country"]::after {
+    content: "*";
+    color: #ef5b59;
+    margin-left: 3px;
+    font-size: 1.2em; /* 增大 * 号字体大小，可根据需求调整 */
+}
+
+/* 将必填提示中的 * 号变红并增大大小 */
+.red-star {
+    color: #ef5b59;
+    font-size: 1.2em; /* 增大 * 号字体大小，可根据需求调整 */
 }
